@@ -11,3 +11,10 @@ CREATE TABLE IF NOT EXISTS users (
   PRIMARY KEY (id),
   UNIQUE KEY uk_users_email (email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Opsional: seed user admin pertama.
+-- Ganti nilai password_hash dengan hasil password_hash('password_asli', PASSWORD_DEFAULT) dari PHP.
+-- Contoh generate hash cepat:
+-- php -r "echo password_hash('Admin12345!', PASSWORD_DEFAULT), PHP_EOL;"
+-- INSERT INTO users (full_name, email, password_hash, role, is_active)
+-- VALUES ('Administrator BBKK', 'admin@bbkk.local', '$2y$10$REPLACE_WITH_HASH', 'admin', 1);
